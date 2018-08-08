@@ -1,0 +1,38 @@
+olympus:
+  list:
+    - type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:h2:mem:db01;DB_CLOSE_DELAY=-1
+      username: u1
+      password:
+    - type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:h2:mem:db02;DB_CLOSE_DELAY=-1
+      username: u1
+      password:
+    - type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:h2:mem:db03;DB_CLOSE_DELAY=-1
+      username: u2
+      password:
+
+op:
+  map:
+    - db01:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:h2:mem:db01;DB_CLOSE_DELAY=-1
+        username: u1
+        password:
+    - db01:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:h2:mem:db02;DB_CLOSE_DELAY=-1
+        username: u1
+        password:
+    - db01:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:h2:mem:db03;DB_CLOSE_DELAY=-1
+        username: u2
+        password:
+spring:
+  h2:
+    console:
+      enabled: true
+  liquibase:
+    change-log: classpath:master.xml
