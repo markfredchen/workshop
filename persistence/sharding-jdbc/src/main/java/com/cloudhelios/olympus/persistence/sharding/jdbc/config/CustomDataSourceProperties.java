@@ -10,8 +10,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties("sharding")
 @Data
 public class CustomDataSourceProperties {
-    private String dbType;
-
     private Database common;
     private Database base;
 

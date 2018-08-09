@@ -85,7 +85,6 @@ public class DataSourceConfiguration {
     private DataSource commonDataSource() {
         DruidDataSource commonDataSource = new DruidDataSource();
         commonDataSource.setUrl(properties.getCommon().getUrl());
-        commonDataSource.setDbType(properties.getDbType());
         commonDataSource.setUsername(properties.getCommon().getUsername());
         commonDataSource.setPassword(properties.getCommon().getPassword());
         commonDataSource.setValidationQuery("SELECT 1");
@@ -114,7 +113,6 @@ public class DataSourceConfiguration {
         for (Tenant tenant : tenantList) {
             DruidDataSource dataSource = new DruidDataSource();
             dataSource.setUrl(String.format(properties.getBase().getUrl(), tenant.getId()));
-            dataSource.setDbType(properties.getDbType());
             dataSource.setUsername(properties.getBase().getUsername());
             dataSource.setPassword(properties.getBase().getPassword());
             dataSource.setValidationQuery("SELECT 1");
