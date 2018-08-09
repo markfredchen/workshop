@@ -1,0 +1,13 @@
+sharding:
+  dbType: h2
+  common:
+    url: jdbc:mysql://localhost:3306/common?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456Ms3
+  base:
+    url: jdbc:mysql://localhost:3306/ds_%d?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456Ms3
+spring:
+  liquibase:
+    enabled: false
